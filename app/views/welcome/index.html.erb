@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+
+
+  </head>
+  <body>
+
+    <title>The TV Database</title>
+
+    <h1>The TV Database</h1>
+
+
+    <br />
+    <br />
+
+    <%= image_tag "tvShows.png", :style => "border: 1px solid red, position: relative" %>
+
+
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+
+          <thead>
+          <tr>
+            <th>Poster</th>
+            <th>Name</th>
+            <th>Ranking</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for i in @tv_shows["results"] do %>
+          <tr>
+            <td>
+              <a class="active" href="<%= tv_shows_show_path %>"<a><%= image_tag ("https://image.tmdb.org/t/p/w370_and_h556_bestv2/" + i["poster_path"]), :style => "border: 1px solid red", :size => "200" %></a>
+            </td>
+            <td><a class="active" href="<%= tv_shows_show_path %>"<a><%= i["name"] %></a></td>
+            <td><%= i["popularity"] %></td>
+          </tr>
+          <% end %>
+        </tbody>
+
+    </table>
+  </div>
+
+
+  </body>
+</html>

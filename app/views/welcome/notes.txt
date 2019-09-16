@@ -1,0 +1,64 @@
+<%= @tv_shows["results"][0]["name"] %>
+
+<% for i in @tv_shows["results"] do %>
+<%=   i["name"] %>
+<%=   i["popularity"] %>
+<%=   i["overview"] %>
+<% end %>
+
+<% for i in @tv_shows["results"] do %>
+  <ul>
+    <li><%=link_to i["name"], tv_shows_index_path(i["id"]) %> </li><br>
+  </ul>
+
+<%  end  %>
+
+
+<%= @tv_show["results"][0]["first_air_date"]%>
+<%= @tv_show["results"][0]["overview"]%>
+
+
+<% for i in @tv_show["results"]%>
+  <%= i["name"]%>
+  <%= i["overview"]%>
+  <%= i["first_air_date"]%>
+<% end%>
+
+
+===============================search_results.html.therubyracer
+<% @tv_shows = HTTParty.get("https://api.themoviedb.org/3/tv/popular?api_key=fb6a1d3f38c3d97f67df6d141f936f29&language=en-US") %>
+
+<body>
+  <br>
+  <br>
+
+  <h1>Results</h1>
+
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+
+      <thead>
+        <tr>
+          <th>Poster</th>
+          <th>Name</th>
+          <th>Summary</th>
+          <th>First Aired</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for i in @tv_shows["results"] do %>
+          <tr>
+            <td>
+               <%= image_tag ("https://image.tmdb.org/t/p/w370_and_h556_bestv2/" + i["poster_path"]), :style => "border: 1px solid black", :size => "200" %>
+            </td>
+            <td> <%= i["name"]%> </td>
+            <td> <%= i["overview"]%> </td>
+            <td> <%= i["first_air_date"]%> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</body>
