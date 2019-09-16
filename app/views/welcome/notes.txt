@@ -1,3 +1,8 @@
+  <center> <%= image_tag "tvShows.png"%> </center>
+
+  <%= link_to image_tag ("https://image.tmdb.org/t/p/w370_and_h556_bestv2/" + i["poster_path"]), tv_shows_show_path(:id => i["id"]) %>
+
+
 <%= @tv_shows["results"][0]["name"] %>
 
 <% for i in @tv_shows["results"] do %>

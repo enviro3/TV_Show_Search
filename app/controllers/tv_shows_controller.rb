@@ -1,13 +1,12 @@
 require 'httparty'
-require "themoviedb"
-require 'tmdb-api'
 
 class TvShowsController < ApplicationController
   def show
-    tv_id = params.keys[1]
+    tv_id = params[:id]
     options = {}
     options[:api_key] = "fb6a1d3f38c3d97f67df6d141f936f29"
     options[:language] = "en-US"
+
 
     @tv_show = HTTParty.get(
       "https://api.themoviedb.org/3/tv/#{tv_id}",

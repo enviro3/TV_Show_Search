@@ -1,5 +1,3 @@
-#Test each method, make sure firing A
-
 require 'rails_helper'
 
 RSpec.describe TvShowsController, :type => :controller do
@@ -12,9 +10,10 @@ RSpec.describe TvShowsController, :type => :controller do
   end
 
   describe "GET #search_results" do
-    it "accesses tv database API properly to search for tv listings"
-    get :search_results
-    expect(response).to have_http_status(:success)
+    it "accesses tv database API properly to search for tv listings" do
+      get :search_results, params: {search: "xena"}
+      expect(response).to have_http_status(:success)
+    end
   end
 
 end

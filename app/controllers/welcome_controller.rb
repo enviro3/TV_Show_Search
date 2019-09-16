@@ -1,6 +1,4 @@
 require 'httparty'
-require "themoviedb"
-require 'tmdb-api'
 
 class WelcomeController < ApplicationController
 

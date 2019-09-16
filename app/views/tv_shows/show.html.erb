@@ -1,4 +1,27 @@
+</br></br></br>
 
-Cool
+<body>
 
-      <%= @tv_show["results"]%>
+  <div class="table">
+    <table class="table table-striped">
+
+      <thead>
+        <tr style="background: #A24EBC">
+          <th scope="col">Name</th>
+          <th scope="col">Overview</th>
+          <th scope="col">First Air Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= @tv_show["name"] %></td>
+          <td align="left"><%= @tv_show["overview"]%></td>
+          <td><%= @tv_show["first_air_date"]%></td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+  <%=@tv_show%>
+</body>

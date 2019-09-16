@@ -1,22 +1,29 @@
+</br></br></br>
 
 <body>
-  <br>
-  <br>
 
-  <h1>Results</h1>
-  <div class="table-responsive">
+  <div class="table">
     <table class="table table-striped">
+
+      <thead>
+        <tr style="background: #A24EBC">
+          <th scope="col">Name</th>
+          <th scope="col">Overview</th>
+          <th scope="col">First Air Date</th>
+        </tr>
+      </thead>
+
       <tbody>
         <% for i in @tv_show["results"]%>
         <tr>
-          <td><%= i["name"]%></td>
-          <td><%= i["overview"]%></td>
+          <td><%= link_to i["name"], tv_shows_show_path(:id => i["id"]) %></td>
+          <td align="left"><%= i["overview"]%></td>
           <td><%= i["first_air_date"]%></td>
         </tr>
         <% end%>
       </tbody>
+
     </table>
   </div>
-
 
 </body>

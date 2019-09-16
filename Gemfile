@@ -19,8 +19,6 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'tmdb-api'
-gem 'themoviedb'
 gem 'httparty'
 gem 'bootstrap', '~> 4.3.1'
 
@@ -44,7 +42,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', '>= 3.0.0'
 end
 
 group :development do
