@@ -67,3 +67,10 @@
   </div>
 
 </body>
+
+
+
+
+
+          <th scope="col">First Air Date</th>
+          <td><%= i["first_air_date"]%></td>

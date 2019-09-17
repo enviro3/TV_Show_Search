@@ -7,6 +7,12 @@ RSpec.describe TvShowsController, :type => :controller do
       get :show
       expect(response).to have_http_status(:success)
     end
+
+    it "properly loads data for a show" do
+      get :show, params: {id: 1412}
+      expect(response).to have_http_status(:success)
+    end
+
   end
 
   describe "GET #search_results" do

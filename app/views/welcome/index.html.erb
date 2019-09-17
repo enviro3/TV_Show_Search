@@ -32,6 +32,7 @@
           <% for i in @tv_shows["results"] do %>
           <tr>
             <td>
+
               <a class="active" href="<%= tv_shows_show_path %>"<a><%= image_tag ("https://image.tmdb.org/t/p/w370_and_h556_bestv2/" + i["poster_path"]), :style => "border: 1px solid black", :size => "200" %></a>
 
             </td>

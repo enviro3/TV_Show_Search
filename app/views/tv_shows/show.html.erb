@@ -7,17 +7,34 @@
 
       <thead>
         <tr style="background: #A24EBC">
-          <th scope="col">Name</th>
-          <th scope="col">Overview</th>
-          <th scope="col">First Air Date</th>
+          <th scope="col 6">Poster</th>
+          <th scope="col 6">Name</th>
+          <th scope="col 6">Overview</th>
+          <th scope="col 6">First Air Date</th>
+          <th scope="col 6">Last Air Date</th>
+          <th scope="col 6">Genre</th>
+          <th scope="col 6">Number of Seasons</th>
+          <th scope="col 6">Number of Episodes</th>
+
         </tr>
       </thead>
 
       <tbody>
         <tr>
+          <td><a class="active"<a> <%= image_tag ("https://image.tmdb.org/t/p/w370_and_h556_bestv2/" + @tv_show["poster_path"]), :style => "border: 1px solid black", :size => "200" %></a></td>
           <td><%= @tv_show["name"] %></td>
           <td align="left"><%= @tv_show["overview"]%></td>
           <td><%= @tv_show["first_air_date"]%></td>
+          <td><%= @tv_show["last_air_date"]%></td>
+          <td>
+            <% for genre in @tv_show["genres"] %>
+              <%= genre["name"]%>
+              <br>
+            <% end %>
+          </td>
+          <td><%= @tv_show["number_of_seasons"]%></td>
+          <td><%= @tv_show["number_of_episodes"]%></td>
+
         </tr>
       </tbody>
 
