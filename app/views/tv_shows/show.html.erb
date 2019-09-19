@@ -21,7 +21,7 @@
 
       <tbody>
         <tr>
-          <td><a class="active"<a> <%= image_tag ("https://image.tmdb.org/t/p/w370_and_h556_bestv2/" + @tv_show["poster_path"]), :style => "border: 1px solid black", :size => "200" %></a></td>
+          <td><a class="active"> <%= image_tag ("https://image.tmdb.org/t/p/w370_and_h556_bestv2/" + @tv_show["poster_path"]), :style => "border: 1px solid black", :size => "200" %></a></td>
           <td><%= @tv_show["name"] %></td>
           <td align="left"><%= @tv_show["overview"]%></td>
           <td><%= @tv_show["first_air_date"]%></td>
@@ -40,5 +40,5 @@
 
     </table>
   </div>
-  <%=@tv_show%>
+
 </body>
